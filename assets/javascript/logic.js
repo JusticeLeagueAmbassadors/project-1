@@ -5,6 +5,7 @@ $(document).ready(function(){
     var isOpen = false;
     submitIcon.click(function(){
         if(isOpen == false){
+            // submitIcon.hide()
             searchBox.addClass('searchbox-open');
             inputBox.focus();
             isOpen = true;
@@ -12,6 +13,7 @@ $(document).ready(function(){
             searchBox.removeClass('searchbox-open');
             inputBox.focusout();
             isOpen = false;
+            // submitIcon.show()
         }
     });  
     submitIcon.mouseup(function(){
@@ -30,6 +32,7 @@ $(document).ready(function(){
 function buttonUp(){
     var inputVal = $('.searchbox-input').val();
     inputVal = $.trim(inputVal).length;
+    console.log("Input val " + inputVal)
     if( inputVal !== 0){
         $('.searchbox-icon').css('display','none');
     } else {

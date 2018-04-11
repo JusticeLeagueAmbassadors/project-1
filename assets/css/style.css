@@ -1,16 +1,15 @@
 #home-bg {
 
-/*background-image: url("https://images.unsplash.com/photo-1428279148693-1cf2163ed67d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f83de557e71fadca0deda42380d86801&auto=format&fit=crop&w=3900&q=80");
-*/background-image: url("https://images.unsplash.com/photo-1507745512299-8bd0e0b3380f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9575a8abd6bfb0ed53d7ad7601bff2dc&auto=format&fit=crop&w=1952&q=80");
+background-image: url("https://images.unsplash.com/photo-1518398046578-8cca57782e17?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=959228001844e0370bcb348f9d1e000a&auto=format&fit=crop&w=2250&q=80");
 background-size: cover;
 background-position: center; 
 /*padding-top: 70px;*/
 }
 
 #about-bg {
-background-image: url("https://images.unsplash.com/photo-1518398046578-8cca57782e17?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=959228001844e0370bcb348f9d1e000a&auto=format&fit=crop&w=2250&q=80");
-background-size: cover;
-background-position: center; 
+  background-image: url("https://images.unsplash.com/photo-1507745512299-8bd0e0b3380f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9575a8abd6bfb0ed53d7ad7601bff2dc&auto=format&fit=crop&w=1952&q=80");
+  background-size: cover;
+  background-position: center; 
 
 }
 
@@ -33,7 +32,7 @@ html {
 
 #logo {
   color: white;
-  font-size: 25px
+  font-size: 25px;
   
 }
 
@@ -103,22 +102,29 @@ html {
   width:100%;
 }
 
-#map{
-  position: absolute;
-  top: 150px;
-  left: 600px;
+#searchBar{
+  height: 50px;
+  width: 400px;
   opacity: 0.5;
-  padding-top: 500px;
-  height: 450px;
-  width:440px;
   border: 2px solid red;
   border-radius: 25px;
+  position:absolute;
+  top: 150px;
+  display: flex;
+  justify-content: center;
 }
 
-#map:hover{
-  opacity: 1;
+.responsive {
 
+  display: flex;
+  justify-content: center;
 }
+
+.topnav {
+    overflow: hidden;
+    background-color: #e9e9e9;
+}
+
 
 /*On Tabs & Desktops */
 @media screen and (min-width: 768px) {
@@ -126,8 +132,11 @@ html {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+
   }
 }
 
-}
+
+
+
 
