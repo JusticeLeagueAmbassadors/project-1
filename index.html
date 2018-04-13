@@ -4,30 +4,30 @@
 	<meta charset="UTF-8">
 	<title>Justice League</title>
 
-	<link href="https://fonts.googleapis.com/css?family=Coustard" rel="stylesheet">
-
-
 	<script
-	src="https://code.jquery.com/jquery-1.9.1.min.js"
-	integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	crossorigin="anonymous"></script>
 
-
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<link rel="stylesheet" href="assets/css/style.css"> 
+	<link rel="stylesheet" href="assets/css/style.css">
+
+
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+	<script type="text/javascript" src="assets/javascript/jquery.autocomplete.min.js"></script>
 
 </head>
 <body id="home-bg">
 
-	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav-items"">
-		<div class="container-fluid" id="nav-items">
+	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav-items">
+		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -52,28 +52,33 @@
 						</ul>
 					</li>
 				</ul>
-
-				<form class="searchbox">
-					<input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
-					<input type="submit" class="searchbox-submit" value="GO">
-					<span class="searchbox-icon">GO</span>
-				</form>
-
+				
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
-	<div class="responsive">
 
-		<div id="searchBar">
-				<input type="text" placeholder="Explore..">
+	<!-- Input value -->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div id="imaginary_container"> 
+					<div class="input-group stylish-input-group">
+						<input id="autocomplete" type="text" name="q" class="form-control custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left ui-autocomplete-input"  placeholder="Explore" >
+						<span class="input-group-addon">
+							<button type="submit">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>  
+						</span>
+					</div>
+					<div id="selection"></div>
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFEuZXgLkNfF5h2faQgJMbrf9dNsPFT6c&callback=initMap"
-	type="text/javascript"></script>
-	<script src="assets/javascript/logic.js"></script> -->
+	<script type="text/javascript" src="assets/javascript/logic.js"></script>
 
 </body>
+
 </html>
 
