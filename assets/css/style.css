@@ -4,14 +4,18 @@ html {
   height: 100%;
   /*font-family: 'Coustard', serif;*/
   color: white;
+  overflow: hidden;
 }
 
+ui-menu{
+
+background-color: silver ;
+}
 
 #logo {
   color: white;
   font-size: 25px;  
 }
-
 
 #home-bg {
 
@@ -56,6 +60,10 @@ html {
 
 #imaginary_container{
   margin-top:500px; 
+}
+
+#ui-id-1 {
+  list-style-type: none; 
 }
 .stylish-input-group .input-group-addon{
   background: white !important; 

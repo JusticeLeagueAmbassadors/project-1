@@ -266,16 +266,29 @@
     "ZZ": "Unknown or Invalid Region"
 }
 
+var arrCountries = []
+for (var key in countries) {
+    arrCountries.push(countries[key])
+}
+console.log(arrCountries)
     // Initialize autocomplete with local lookup:
-    $('#autocomplete').devbridgeAutocomplete({
-        lookup: countries,
-        minChars: 1,
-        onSelect: function (suggestion) {
-            $('#selection').html('You selected: ' + suggestion.value + ', ' + suggestion.data.category);
-        },
-        showNoSuggestionNotice: true,
-        noSuggestionNotice: 'Sorry, no matching results',
-        groupBy: 'category'
+    $('#autocomplete').autocomplete({
+        source: function(request, response) {
+        var results = $.ui.autocomplete.filter(arrCountries, request.term);
+        response(results.slice(0, 10));
+        // console.log(results.slice(0, 10))
+        $(".ui-helper-hidden-accessible:last-child").hide()
+        }
+
+});
+
+    $("#userInput").on("click", function(){
+        var userInput = $("#autocomplete").val().trim()
+
+        console.log(userInput);
+
     });
+
+
     
    

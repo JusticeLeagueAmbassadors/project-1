@@ -17,12 +17,12 @@
 
 	<link rel="stylesheet" href="assets/css/style.css">
 
-	<script
-	src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-	<script type="text/javascript" src="assets/javascript/jquery.autocomplete.min.js"></script>
-
-	</head>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 
+	<!-- <script type="text/javascript" src="assets/javascript/jquery.autocomplete.min.js"></script>
+ -->
+</head>
 <body id="home-bg">
 
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav-items">
@@ -62,9 +62,9 @@
 			<div class="col-sm-6 col-sm-offset-3">
 				<div id="imaginary_container"> 
 					<div class="input-group stylish-input-group">
-						<input id="autocomplete" type="text" name="q" class="form-control"  placeholder="Explore" >
+						<input id="autocomplete" type="text" name="q" class="form-control custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left ui-autocomplete-input"  placeholder="Explore" >
 						<span class="input-group-addon">
-							<button type="submit">
+							<button type="submit" id ="userInput">
 								<span class="glyphicon glyphicon-search"></span>
 							</button>  
 						</span>
