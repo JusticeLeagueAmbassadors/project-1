@@ -1,4 +1,4 @@
-    var countries = {
+   var countries = {
     "AD": "Andorra",
     "A2": "Andorra Test",
     "AE": "United Arab Emirates",
@@ -264,6 +264,7 @@
     "ZM": "Zambia",
     "ZW": "Zimbabwe",
     "ZZ": "Unknown or Invalid Region"
+
 }
 
 var arrCountries = []
