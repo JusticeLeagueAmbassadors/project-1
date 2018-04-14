@@ -7,19 +7,15 @@ html {
   overflow: hidden;
 }
 
-ui-menu{
-
-background-color: silver ;
-}
-
 #logo {
+  background-color: #436588;
+  font-family: 'Bree Serif', serif;
   color: white;
-  font-size: 25px;  
 }
 
 #home-bg {
 
-  background-image: url("https://images.unsplash.com/photo-1518398046578-8cca57782e17?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=959228001844e0370bcb348f9d1e000a&auto=format&fit=crop&w=2250&q=80");
+  background-image: url("https://images.unsplash.com/photo-1511312066185-a25084d4dee2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e3f92177346bbbb23d83467e77b880c8&auto=format&fit=crop&w=2250&q=80");
   background-size: cover;
   background-position: center; 
   left: 0;
@@ -31,7 +27,7 @@ background-color: silver ;
 }
 
 #about-bg {
-  background-image: url("https://images.unsplash.com/photo-1507745512299-8bd0e0b3380f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9575a8abd6bfb0ed53d7ad7601bff2dc&auto=format&fit=crop&w=1952&q=80");
+  background-image: url("https://images.unsplash.com/photo-1481991990414-7802ae5de1e0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a315d97d7621ccf8d706ed3b1284982&auto=format&fit=crop&w=2286&q=80");
   background-size: cover;
   background-position: center;
   left: 0;
@@ -40,26 +36,30 @@ background-color: silver ;
   bottom: 0;
   opacity: 1;
   z-index: 1; 
-
 }
 
 .dropdown-toggle,
 .dropdown-menu {
   font-family: 20 Arial,sans-serif;
   color: red;
-  
 }
 
 #nav-items {
 
   background-color: #436588;
-  padding-top: 20px;
-  padding-bottom: 15px;
-  font-size: 25px;
 }
 
 #imaginary_container{
-  margin-top:500px; 
+  margin-top:500px;
+  background-color: white; 
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+
+#search {
+  background-color: #C3BBC6; 
+  border-radius: 20px;
+  border: 1px solid transparent;
 }
 
 #ui-id-1 {
@@ -73,15 +73,38 @@ background-color: silver ;
   box-shadow:0 0 0; 
   border-color:#ccc;
 }
-.stylish-input-group button{
+.stylish-input-group button {
   border:0;
   background:transparent;
 }
 
-#blank_section {
-  
-  height:200px;
-  width: 100%;
+#autocomplete {
+  font-size: 20px;
+  color: #581d77;
+  font-family: 'Bree Serif', serif;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+#links,
+#menu {
+  font-size: 20px;
+  color: white;
+  font-family: 'Bree Serif', serif;
+}
+#photo-group {
+  display: flex;
+  justify-content: center;
+}
+
+.photos {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: #846271;
+/*  opacity: 0.5;*/
+  padding: 100px;
+  margin: 100px;
+  margin-top: 300px;
 }
 /*On Tabs & Desktops */
 @media screen and (min-width: 768px) {
