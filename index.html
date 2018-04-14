@@ -1,77 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Justice League</title>
 
-	<script
-	src="https://code.jquery.com/jquery-3.3.1.min.js"
-	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
-	
+
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" href="assets/css/style.css">
 
-	
+
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	
-	
+
+
 	<script type="text/javascript" src="assets/javascript/jquery.autocomplete.min.js"></script>
-	
-	
+
+
 	<script type="text/javascript" src="assets/javascript/logic.js"></script>
 </head>
+
 <body id="home-bg">
 
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav-items">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				 aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.html" class="navbar-brand active navbar-center" id="logo"><span class="glyphicon glyphicon-globe"></span> Adventurers</a>
+				<a href="index.html" class="navbar-brand active navbar-center" id="logo">
+					<span class="glyphicon glyphicon-globe"></span> Adventurers</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="menu">Menu <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="menu">Menu
+							<span class="caret"></span>
+						</a>
 						<ul class="dropdown-menu" id="links">
-							<li><a href="about.html">Who We Are</a></li>
-							<li><a href="#">Sample Action2</a></li>
-							<li><a href="#">Sample Action3</a></li>
-							<li><a href="#">Sample Action4</a></li>
+							<li>
+								<a href="about.html">Who We Are</a>
+							</li>
+							<li>
+								<a href="#">Sample Action2</a>
+							</li>
+							<li>
+								<a href="#">Sample Action3</a>
+							</li>
+							<li>
+								<a href="#">Sample Action4</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
-				
-			</div><!-- /.navbar-collapse -->
-		</div><!-- /.container-fluid -->
+
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
 	</nav>
 
 	<!-- Input value -->
 	<div class="container mainpage">
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3">
-				<div> 
+				<div>
 					<div class="input-group stylish-input-group" id="imaginary_container">
-						<input id="autocomplete" type="text" name="q" class="form-control"  placeholder="Explore" >
+						<input id="autocomplete" type="text" name="q" class="form-control" placeholder="Explore">
 						<span class="input-group-addon" id="search">
-							<button type="submit" id ="userInput">
+							<button type="submit" id="userInput">
 								<span class="glyphicon glyphicon-search"></span>
-							</button>  
+							</button>
 						</span>
 					</div>
 					<div id="selection"></div>
@@ -86,16 +100,45 @@
 
 	<section id="countryinfo">
 		<div class="container">
-			 <!-- Weather Container Div Begin-->
-			 <div class="alert alert-dismissible alert-primary">
+			<!-- Weather Container Div Begin-->
+			<div class="alert alert-dismissible alert-primary">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong>Local Weather</strong> <a href="#" class="alert-link">Temperature Goes Here</a>We need a C or F converter!
-			  </div>          
+				<strong>Local Weather</strong>
+				<a href="#" class="alert-link"> Temperature Goes Here</a> We need a C or F converter!
+			</div>
 			<!-- Weather Container Div End-->
+			<!-- Currency Container Div Begin-->
+			<div class="alert alert-dismissible alert-primary">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>Local Currency</strong>
+				<a href="#" class="alert-link"> Currency Goes Here </a> We need a currency converter!
+			</div>
+			<!-- Currency Container Div End-->
+			<!-- News Container Div Coding Begins-->
+			<div class="alert alert-dismissible alert-warning">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<h4 class="alert-heading">News!</h4>
+				<div class="alert alert-dismissible alert-secondary">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong>Box 1 </strong> Article 1
+					<a href="#" class="alert-link"> read about local news here</a>.
+				</div>
+				<div class="alert alert-dismissible alert-secondary">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong>Box 2 </strong> Article 2
+					<a href="#" class="alert-link"> read about local news here</a>.
+				</div>
+				<div class="alert alert-dismissible alert-secondary">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong>Box 3 </strong> Article 3
+					<a href="#" class="alert-link"> read about local news here</a>.
+				</div>
+			</div>
+			<!-- News Container Div Coding Ends-->
+
 		</div>
 	</section>
 
 </body>
 
 </html>
-
