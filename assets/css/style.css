@@ -4,7 +4,7 @@ html {
   height: 100%;
   /*font-family: 'Coustard', serif;*/
   color: white;
-  overflow: hidden;
+  overflow: auto;
 }
 
 ui-menu{
@@ -95,8 +95,20 @@ background-color: silver;
 
 
 
+#countryinfo{
+
+  padding: 128px 0px;
+  width: 100%;
+  background-color: #436588; 
+
+}
 
 
+.mainpage {
+
+  margin-bottom: 128px;
+
+}
 
 
 

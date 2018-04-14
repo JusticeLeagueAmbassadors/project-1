@@ -326,6 +326,6 @@ for (var key in countries) {
      
      var data = result
      console.log(data)
-     
+     $("#countryinfo").scrollIntoView();
      })
   }
