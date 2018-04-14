@@ -1,4 +1,5 @@
-   var countries = {
+
+    var countries = {
     "AD": "Andorra",
     "A2": "Andorra Test",
     "AE": "United Arab Emirates",
@@ -271,7 +272,7 @@ var arrCountries = []
 for (var key in countries) {
     arrCountries.push(countries[key])
 }
-console.log(arrCountries)
+
     // Initialize autocomplete with local lookup:
     $('#autocomplete').autocomplete({
         source: function(request, response) {
@@ -283,13 +284,48 @@ console.log(arrCountries)
 
 });
 
-    $("#userInput").on("click", function(){
+
+
+
+    $(document).on("click", "#userInput", function(){
         var userInput = $("#autocomplete").val().trim()
 
         console.log(userInput);
-
+        querymaker(userInput)
     });
 
 
-    
+
+
+
    
+ var apiKey = "apiKey=f02c9d53ce0c4884b75db0cc20553b56"
+
+
+ var queryURL = "https://newsapi.org/v2/everything?q="
+ 
+ 
+ 
+ 
+  function  querymaker(x) {
+ 
+     queryURL += x.toLowerCase() + "&" + apiKey
+ 
+     console.log(queryURL)
+     call()
+ 
+  }
+ 
+  function call() {
+ 
+ 
+     $.ajax({
+         url: queryURL,
+         method: "GET"
+     }) .then (function (result){
+     
+     var data = result
+     console.log(data)
+     $("#countryinfo").scrollIntoView();
+     })
+  }
