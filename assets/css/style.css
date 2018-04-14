@@ -62,9 +62,18 @@ html {
   border: 1px solid transparent;
 }
 
+#ui-id-1 > * {
+  font-size: 20px;
+  color: pink;
+}
+
 #ui-id-1 {
   list-style-type: none; 
+  left: 0;
+  padding-left: 0;
+    border: 5px solid red;
 }
+
 .stylish-input-group .input-group-addon{
   background: white !important; 
 }
@@ -101,7 +110,7 @@ html {
   width: 100px;
   height: 100px;
   background-color: #846271;
-/*  opacity: 0.5;*/
+  /*  opacity: 0.5;*/
   padding: 100px;
   margin: 100px;
   margin-top: 300px;
