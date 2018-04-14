@@ -77,11 +77,11 @@ html {
 .stylish-input-group .input-group-addon{
   background: white !important; 
 }
-.stylish-input-group .form-control{
+/*.stylish-input-group .form-control{
   border-right:0; 
   box-shadow:0 0 0; 
   border-color:#ccc;
-}
+}*/
 .stylish-input-group button {
   border:0;
   background:transparent;
@@ -131,7 +131,7 @@ html {
 
   padding: 128px 0px;
   width: 100%;
-  background-color: #436588; 
+  background-color: #e8f3f4; 
 
 }
 
@@ -144,9 +144,16 @@ html {
 
 
 .navbar{
+  
 
-  margin-right: 10px;
+}
 
+.controls {
+  color: black;
+}
+
+.btn-success {
+  background-color: #145a60;
 }
 
 /* width */
@@ -168,7 +175,6 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
-
 
 
 

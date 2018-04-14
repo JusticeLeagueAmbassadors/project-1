@@ -49,10 +49,7 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="menu">Menu <span class="caret"></span></a>
 						<ul class="dropdown-menu" id="links">
-							<li><a href="about.html">Who We Are</a></li>
-							<li><a href="#">Sample Action2</a></li>
-							<li><a href="#">Sample Action3</a></li>
-							<li><a href="#">Sample Action4</a></li>
+							<li><a href="about.html">Who We Are</a></li>							
 						</ul>
 					</li>
 				</ul>
@@ -78,15 +75,72 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-
+	</div>	
 
 
 
 	<section id="countryinfo">
 		<div class="container"></div>
+
+			<div class="container">
+			<form id="contact-form" method="post" action="contact.php" role="form">
+
+			    <div class="messages"></div>
+
+			    <div class="controls">
+
+			        <div class="row">
+			            <div class="col-md-6">
+			                <div class="form-group">
+			                    <label for="form_name">Firstname *</label>
+			                    <input id="form_name" type="text" name="name" class="form-control" placeholder="First Name" required="required" data-error="Firstname is required.">
+			                    <div class="help-block with-errors"></div>
+			                </div>
+			            </div>
+			            <div class="col-md-6">
+			                <div class="form-group">
+			                    <label for="form_lastname">Lastname *</label>
+			                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Last Name" required="required" data-error="Lastname is required.">
+			                    <div class="help-block with-errors"></div>
+			                </div>
+			            </div>
+			        </div>
+			        <div class="row">
+			            <div class="col-md-6">
+			                <div class="form-group">
+			                    <label for="form_email">Email *</label>
+			                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Valid email is required.">
+			                    <div class="help-block with-errors"></div>
+			                </div>
+			            </div>
+			            <div class="col-md-6">
+			                <div class="form-group">
+			                    <label for="form_phone">Phone</label>
+			                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone Number">
+			                    <div class="help-block with-errors"></div>
+			                </div>
+			            </div>
+			        </div>
+			        <div class="row">
+			            <div class="col-md-12">
+			                <div class="form-group">
+			                    <label for="form_message">Message *</label>
+			                    <textarea id="form_message" name="message" class="form-control" placeholder="Message Us" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+			                    <div class="help-block with-errors"></div>
+			                </div>
+			            </div>
+			            <div class="col-md-12">
+			                <input type="submit" class="btn btn-success btn-send" value="Send message">
+			            </div>
+			        </div>
+			        
+			    </div>
+
+			</form>
+		</div>
 	</section>
+
+
 
 </body>
 
