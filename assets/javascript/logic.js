@@ -1,7 +1,5 @@
-
-    var countries = {
+var countries = {
     "AD": "Andorra",
-    "A2": "Andorra Test",
     "AE": "United Arab Emirates",
     "AF": "Afghanistan",
     "AG": "Antigua and Barbuda",
@@ -265,7 +263,6 @@
     "ZM": "Zambia",
     "ZW": "Zimbabwe",
     "ZZ": "Unknown or Invalid Region"
-
 }
 
 var arrCountries = []
@@ -276,56 +273,62 @@ for (var key in countries) {
     // Initialize autocomplete with local lookup:
     $('#autocomplete').autocomplete({
         source: function(request, response) {
-        var results = $.ui.autocomplete.filter(arrCountries, request.term);
-        response(results.slice(0, 10));
+            var results = $.ui.autocomplete.filter(arrCountries, request.term);
+            response(results.slice(0, 5));
         // console.log(results.slice(0, 10))
         $(".ui-helper-hidden-accessible:last-child").hide()
-        }
+    }
 
 });
-
-
-
 
     $(document).on("click", "#userInput", function(){
         var userInput = $("#autocomplete").val().trim()
 
-        console.log(userInput);
-        querymaker(userInput)
+        querymaker(userInput);
     });
 
+    var apiKey = "apiKey=f02c9d53ce0c4884b75db0cc20553b56"
 
+    var queryURL = "https://newsapi.org/v2/everything?q="
 
+    function  querymaker(x) {
 
-
-   
- var apiKey = "apiKey=f02c9d53ce0c4884b75db0cc20553b56"
-
-
- var queryURL = "https://newsapi.org/v2/everything?q="
- 
- 
- 
- 
-  function  querymaker(x) {
- 
      queryURL += x.toLowerCase() + "&" + apiKey
- 
+
      console.log(queryURL)
      call()
- 
-  }
- 
-  function call() {
- 
- 
+
+ }
+
+ function call() {
+
      $.ajax({
          url: queryURL,
          method: "GET"
      }) .then (function (result){
-     
-     var data = result
-     console.log(data)
-     $("#countryinfo").scrollIntoView();
+
+         var data = result
+         console.log(data)
+         $("#countryinfo").scrollIntoView();
      })
-  }
+ }
+
+ // Tooltip only Text
+    $('.masterTooltip').hover(function(){
+        // Hover over code
+        var title = $(this).attr('title');
+        $(this).data('tipText', title).removeAttr('title');
+        $('<p class="tooltip"></p>')
+        .text(title)
+        .appendTo('body')
+        .fadeIn('slow');
+    }, function() {
+        // Hover out code
+        $(this).attr('title', $(this).data('tipText'));
+        $('.tooltip').remove();
+    }).mousemove(function(e) {
+        var mousex = e.pageX + 20; //Get X coordinates
+        var mousey = e.pageY + 10; //Get Y coordinates
+        $('.tooltip')
+        .css({ top: mousey, left: mousex })
+    });

@@ -2,9 +2,9 @@ body,
 html {
   width: 100%;
   height: 100%;
-  /*font-family: 'Coustard', serif;*/
   color: white;
   overflow: auto;
+  font-family: 'Bree Serif', serif;
 }
 
 #logo {
@@ -64,24 +64,30 @@ html {
 
 #ui-id-1 > * {
   font-size: 20px;
-  color: pink;
+  color: #581d77;
 }
 
 #ui-id-1 {
   list-style-type: none; 
   left: 0;
   padding-left: 0;
-    border: 5px solid red;
+  padding: 10px;
+  border: 1px solid;
+  box-shadow: 1px 1px 1px 1px #F3DB9F;
+  color: black;
+  background-color: white;
+  font-family: 'Bree Serif', serif;
+  width: 36%;
 }
 
 .stylish-input-group .input-group-addon{
   background: white !important; 
 }
-/*.stylish-input-group .form-control{
+.stylish-input-group .form-control{
   border-right:0; 
-  box-shadow:0 0 0; 
   border-color:#ccc;
-}*/
+}
+
 .stylish-input-group button {
   border:0;
   background:transparent;
@@ -100,9 +106,12 @@ html {
   color: white;
   font-family: 'Bree Serif', serif;
 }
-#photo-group {
-  display: flex;
-  justify-content: center;
+.header {
+  font-family: 'Bree Serif', serif;
+  font-size: 40px;
+ text-align: center;
+ padding-bottom: 50px;
+ padding-top: 50px;
 }
 
 .photos {
@@ -110,42 +119,61 @@ html {
   width: 100px;
   height: 100px;
   background-color: #846271;
-  /*  opacity: 0.5;*/
   padding: 100px;
-  margin: 100px;
   margin-top: 300px;
 }
-/*On Tabs & Desktops */
-@media screen and (min-width: 768px) {
-  .navbar-center{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 
-  }
-}
-
-
-
-#countryinfo{
-
+#countryinfo {
   padding: 128px 0px;
   width: 100%;
-  background-color: #e8f3f4; 
+  background-color: /*#D8BFD8*/ /*#D2691E*//*#FFE4E1*//*#e8f3f4*//*#afeeee*//*#DEB887*//*#BC8F8F*/#FEC297;
+  opacity : 0.9;
+}
+
+
+#contactInfo {
+  margin-top: 150px;
+  padding: 128px 0px;
+  width: 100%;
+  background-color: /*#D8BFD8*//*#D2691E*//*#FFE4E1*//*#e8f3f4*//*#afeeee*//*#DEB887*//*#BC8F8F*/#FEC297; 
+  opacity : 0.9;
+}
+
+.about-us-container {
+  margin-top: 100px;
+  margin-bottom: 150px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #D8BFD8 /*#D2691E*//*#FFE4E1*//*#e8f3f4*//*#afeeee*//*#DEB887*//*#BC8F8F*//*#FEC297*/;
+  opacity : 0.9;
 
 }
 
+img:hover {
+  opacity:0.6;
+}
+
+.tooltip {
+  display:none;
+  position:absolute;
+  border:1px solid #333;
+  background-color:#161616;
+  border-radius:5px;
+  padding:10px;
+  color:#fff;
+  font-size:12px Arial;
+}
+
+.header {
+ text-align: center;
+ padding-bottom: 50px;
+ padding-top: 50px;
+}
 
 .mainpage {
-
   margin-bottom: 128px;
-
-}
-
-
-.navbar{
-  
-
 }
 
 .controls {
@@ -176,5 +204,14 @@ html {
   background: #555; 
 }
 
+/*On Tabs & Desktops */
+@media screen and (min-width: 768px) {
+  .navbar-center{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+  }
+}
 
 
