@@ -21,9 +21,6 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<!-- 
-	<script type="text/javascript" src="assets/javascript/jquery.autocomplete.min.js"></script>
- -->
 
 </head>
 
@@ -52,7 +49,7 @@
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" id="links">
-							<li><a href="about.html">Who We Are</a></li>							
+							<li><a href="#imgs">Who We Are</a></li>							
 						</ul>
 					</li>
 				</ul>
@@ -121,88 +118,96 @@
 			</div>
 		</div>
 	</section>
-			<!-- News Container Div Coding Ends-->
+	<!-- News Container Div Coding Ends-->
 
 	<section id="contactInfo"> 
 		<div class="container">
-				<form id="contact-form" method="post" action="contact.php" role="form">
+			<form id="contact-form" method="post" action="contact.php" role="form">
 
-					<div class="messages"></div>
+				<div class="messages"></div>
 
-					<div class="controls">
+				<div class="controls">
 
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="form_name">First Name *</label>
-									<input id="form_name" type="text" name="name" class="form-control" placeholder="First Name" required="required" data-error="Firstname is required.">
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="form_lastname">Last Name *</label>
-									<input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Last Name" required="required" data-error="Lastname is required.">
-									<div class="help-block with-errors"></div>
-								</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="form_name">First Name *</label>
+								<input id="form_name" type="text" name="name" class="form-control" placeholder="First Name" required="required" data-error="Firstname is required.">
+								<div class="help-block with-errors"></div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="form_email">Email *</label>
-									<input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Valid email is required.">
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="form_phone">Phone</label>
-									<input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone Number">
-									<div class="help-block with-errors"></div>
-								</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="form_lastname">Last Name *</label>
+								<input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Last Name" required="required" data-error="Lastname is required.">
+								<div class="help-block with-errors"></div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="form-group">
-									<label for="form_message">Message *</label>
-									<textarea id="form_message" name="message" class="form-control" placeholder="Message Us" rows="4" required="required" data-error="Please,leave us a message."></textarea>
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-							<div class="col-md-12">
-								<input type="submit" class="btn btn-success btn-send" value="Send message">
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="form_email">Email *</label>
+								<input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Valid email is required.">
+								<div class="help-block with-errors"></div>
 							</div>
 						</div>
-
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="form_phone">Phone</label>
+								<input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone Number">
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="form_message">Message *</label>
+								<textarea id="form_message" name="message" class="form-control" placeholder="Message Us" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<input type="submit" class="btn btn-success btn-send" value="Send message">
+						</div>
 					</div>
 
-				</form>
+				</div>
+
+			</form>
 		</div>
 	</section>
 
-	<section class="about-us-container">
-		<div class="container">
-			<div class="header">
-				About Us
+	<div class="container about-us-container">
+		<div class="row header">
+			MEET THE TEAM
+		</div>
+		<div class="separator-container">
+			<div class="separator line-separator">∎</div>
+		</div>
+		<div class="row" id="imgs-block">
+			<div class="col-md-3"><img src="assets/images/elvin.png" class="masterTooltip" alt="Responsive image">
+				<div class="big-text">Elvin</div>
+				<p class="small-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod repudiandae eius nisi laborum exercitationem rem non vero architecto distinctio sint animi, adipisci dolorum beatae in odio voluptatem omnis reprehenderit ex.</p>
 			</div>
-			<div class="row" id="imgs">
-				<div class="col-md-3"><img src="assets/images/elvin.png" class="img-thumbnail" class="masterTooltip" alt="Responsive image" title="Tooltip on image">
-				</div>
-				<div class="col-md-3"><img src="assets/images/bex.png" class="img-thumbnail" class="masterTooltip" alt="Responsive image" title="Tooltip on image">
-				</div>
-				<div class="col-md-3"><img src="assets/images/daniel.png" class="img-thumbnail" class="masterTooltip" alt="Responsive image" title="Tooltip on image">
-				</div>
-				<div class="col-md-3"><img src="assets/images/anna.png" class="img-thumbnail" class="masterTooltip" alt="Responsive image" title="Tooltip on image">
-				</div>
+			<div class="col-md-3"><img src="assets/images/bex.png" class="masterTooltip" alt="Responsive image">
+				<div class="big-text">Bex</div>
+				<p class="small-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod repudiandae eius nisi laborum exercitationem rem non vero architecto distinctio sint animi, adipisci dolorum beatae in odio voluptatem omnis reprehenderit ex.</p>
 			</div>
-	
+			<div class="col-md-3"><img src="assets/images/daniel.png" class="masterTooltip" alt="Responsive image">
+				<div class="big-text">Daniel</div>
+				<p class="small-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod repudiandae eius nisi laborum exercitationem rem non vero architecto distinctio sint animi, adipisci dolorum beatae in odio voluptatem omnis reprehenderit ex.</p>
+			</div>
+			<div class="col-md-3"><img src="assets/images/anna.png" class="masterTooltip" alt="Responsive image">
+				<div class="big-text">Anna</div>
+				<p class="small-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod repudiandae eius nisi laborum exercitationem rem non vero architecto distinctio sint animi, adipisci dolorum beatae in odio voluptatem omnis reprehenderit ex.</p>
+			</div>
 		</div>
 
-	</section>
+	</div>
 
-		<script type="text/javascript" src="assets/javascript/logic.js"></script>
-	</body>
+	<script type="text/javascript" src="assets/javascript/logic.js"></script>
+</body>
 
-	</html>
+</html>
