@@ -1,3 +1,16 @@
+var config = {
+    apiKey: "AIzaSyDETKaOq8ZXf9ZantwXr2QqUUmD7cir1Yc",
+    authDomain: "group-project1-ba977.firebaseapp.com",
+    databaseURL: "https://group-project1-ba977.firebaseio.com",
+    projectId: "group-project1-ba977",
+    storageBucket: "",
+    messagingSenderId: "715464343643"
+  };
+  
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
 var countries = {
     "AD": "Andorra",
     "AE": "United Arab Emirates",
@@ -286,6 +299,34 @@ for (var key in countries) {
 
         querymaker(userInput);
     });
+
+
+    $(document).on("click", "#submit-button", function(){
+    event.preventDefault();
+
+    var firstName = $('#form_firstname').val().trim();
+    var lastName = $('#form_lastname').val().trim();
+    var email = $('#form_email').val().trim();
+    var phone = $('#form_phone').val().trim();
+    var message = $('#form_message').val().trim();
+
+    database.ref().push({
+        
+        firstname: firstName,
+        lastname: lastName,
+        email: email,
+        phone: phone,
+        message: message
+    })
+
+    $('#form_firstname').val("");
+    $('#form_lastname').val("");
+    $('#form_email').val("");
+    $('#form_phone').val("");
+    $('#form_message').val("");
+
+});
+    
 
     var apiKey = "apiKey=f02c9d53ce0c4884b75db0cc20553b56"
 
