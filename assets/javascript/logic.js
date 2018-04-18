@@ -206,5 +206,34 @@
     
 
 
+    //var apiKey = "apiKey=f02c9d53ce0c4884b75db0cc20553b56"
 
 
+//Get Weather Function & API 
+function getWeather(city){
+  var weatherAPIKey = "166a433c57516f51dfab1f7edaed8413";
+  var queryWeatherURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + weatherAPIKey;
+  
+  $.ajax({
+    url: queryWeatherURL,
+    method: "GET"
+  }).done(function(response) {
+      console.log(response);
+  });
+}
+//to call getWeather function for testing
+getWeather("San Francisco");
+
+//Get Currency Function & API 
+function getCurrency(country){
+  var queryCurrencyURL = "http://data.fixer.io/api/latest?access_key=943b426312d481a06ca58681641063cf"
+
+  $.ajax({
+    url: queryCurrencyURL,
+    method: "GET"
+  }).done(function(response) {
+    console.log(response);
+  });
+}
+//to call getCurrency fucntion for testing
+getCurrency("Canada")
