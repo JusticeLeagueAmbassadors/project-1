@@ -32,7 +32,6 @@
 
         }
 
-
     
     $(document).on("click", "#userInput", function(){
 
@@ -106,9 +105,6 @@
 }
 
 
-
-
-
     function htmlpusher(content){
 
         //creating news container
@@ -179,7 +175,6 @@
 
 
 
-
      // sending contact info into firebase
 
 
@@ -209,4 +204,22 @@
 
 });
     
+
+    var apiKey = "apiKey=f02c9d53ce0c4884b75db0cc20553b56"
+    
+    
+    var config = {
+        apiKey: "AIzaSyDETKaOq8ZXf9ZantwXr2QqUUmD7cir1Yc",
+        authDomain: "group-project1-ba977.firebaseapp.com",
+        databaseURL: "https://group-project1-ba977.firebaseio.com",
+        projectId: "group-project1-ba977",
+        storageBucket: "",
+        messagingSenderId: "715464343643"
+      };
+      
+      firebase.initializeApp(config);
+    
+      var database = firebase.database();
+
+
 
