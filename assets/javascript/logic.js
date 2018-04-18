@@ -1,4 +1,4 @@
-    
+
     var config = {
         apiKey: "AIzaSyDETKaOq8ZXf9ZantwXr2QqUUmD7cir1Yc",
         authDomain: "group-project1-ba977.firebaseapp.com",
@@ -159,7 +159,7 @@
         newsbox.append(newsboxcontent)
 
         $(".news-container").append(newsbox)
-
+        console.log(htmlpushernews);
 
 
     }
@@ -217,7 +217,7 @@
         $(".weatherHumidity").text(data.main.humidity)
         $(".weatherWind").text(data.wind.speed)
         $(".weatherMain").text(data.weather.main)
-
+        console.log(htmlpusherweather);
 
     }
 
