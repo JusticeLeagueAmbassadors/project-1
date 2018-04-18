@@ -12,9 +12,11 @@
     
       var database = firebase.database();
     
-
-    
-
+    $(document).on("click", "#links", function(){
+    $('html, body').animate({
+        scrollTop: $("#aboutUs").offset().top
+    }, 1000);  
+});
 
    // This object is for keeping api keys and url's
 
