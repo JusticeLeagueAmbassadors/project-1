@@ -12,6 +12,7 @@
     
       var database = firebase.database();
     
+    // animated scroll-down once you click on "Who We Are"
     $(document).on("click", "#links", function(){
     $('html, body').animate({
         scrollTop: $("#aboutUs").offset().top
