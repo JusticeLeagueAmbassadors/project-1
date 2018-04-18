@@ -111,6 +111,7 @@ html {
   width: 100%;
   background-color: /*#D8BFD8*/ /*#D2691E*//*#FFE4E1*//*#e8f3f4*//*#afeeee*//*#DEB887*//*#BC8F8F*/#FEC297;
   opacity : 0.9;
+  margin-bottom: 50px;
 }
 
 
@@ -346,24 +347,26 @@ img:hover {
 
   width: 30%;
   border: solid 1px red;
-  height: 70px;
+  height: 180px;
   margin: 10px;
   float: left;
+  background: black;
  }
 
  .newsheader {
 
-  
   width: 100%;
   text-align: center;
+  font-size: 1.5em; 
  }
  
  
  
  .newstext {
 
-  width: 100%;
-  margin: 3px;
+  width: 90%;
+  margin-left: 20px;
   text-overflow: inline;
+  font-size: 1.2em; 
   
  }

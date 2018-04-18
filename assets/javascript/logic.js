@@ -28,6 +28,13 @@
             country : {
                 url :  "https://restcountries.eu/rest/v2/name/",
                 addurl : "?fullText=true"
+            },
+
+            weather: {
+
+                apiKey : "&APPID=166a433c57516f51dfab1f7edaed8413",
+                url: "http://api.openweathermap.org/data/2.5/weather?q="
+
             }
 
         }
@@ -54,7 +61,7 @@
     
    
     //call for News api
-        function  newsapicall(x) {
+     function  newsapicall(x) {
         
 
             query.news.url += x.toLowerCase() + "&" + query.news.apiKey
@@ -69,10 +76,10 @@
                 console.log("News", data)
 
                 // newscleaner(data)
-                for (var i=0 ; i<=5; i++){
+                for (var i=0 ; i<=2; i++){
 
-                    var content = data.articles[i].description
-                        htmlpusher(content)
+                    var content = data.articles[i]
+                        htmlpushernews(content)
     
                 }
             })
@@ -98,14 +105,18 @@
 
             console.log("country", data)
 
-       
+            //function to show data in html
+            htmlpushercountryinfo(data)
+
+            //pass city name for weather api
+            weatherapicall(data[0].capital)
 
         })
 
 }
 
-
-    function htmlpusher(content){
+    //dinamically push news
+    function htmlpushernews(content){
 
         //creating news container
 
@@ -123,22 +134,89 @@
         var newsheader = $("<div/>")
 
         newsheader.attr("class", "newsheader")
+
+        newsheader.text(content.title)
+
+
+        //news img
+
+        var newsimg = $("<img/>")
+        newsimg.attr("src", content.urlToImage)
+
+
         
         //news text
         var newstext = $("<div/>")
 
         newstext.attr("class", "newstext")
 
-        newstext.text(content)
+        newstext.text(content.description)
 
         
 
-        newsboxcontent.append(newsheader, newstext)
+        newsboxcontent.append(newsheader, newsimg, newstext)
 
         newsbox.append(newsboxcontent)
 
         $(".news-container").append(newsbox)
 
+
+
+    }
+
+    //dinamically push country info
+    function htmlpushercountryinfo(result) {
+
+
+        $(".maininfo").show()
+
+        $(".countrynameText").text("Country: " + result[0].name)
+
+
+        $(".regionText").text("Region: " + result[0].region)
+
+
+        $(".capitalText").text("Capital:"  + result[0].capital)
+
+
+        $(".currencyText").text("Currency: " +  result[0].currencies[0].code)
+
+
+        $(".languagesText").text("Languages: " +  result[0].languages[0].name)
+
+        $(".callingCodeText").text("Calling Code: " + +  result[0].callingCodes[0])
+
+
+
+    }
+
+
+    //call for Weather Api
+
+    function weatherapicall(city){
+
+
+        var queryWeatherURL = query.weather.url + city + query.weather.apiKey;
+        
+        $.ajax({
+          url: queryWeatherURL,
+          method: "GET"
+        }).done(function(response) {
+            console.log(response);
+
+            htmlpusherweather(response)
+        });
+    }
+
+    //push weather info to html
+    function htmlpusherweather(data){
+
+        $(".weatherHeader").text(data.name)
+        $(".weatherTemp").text(data.main.temp)
+        $(".weatherPress").text(data.main.pressure)
+        $(".weatherHumidity").text(data.main.humidity)
+        $(".weatherWind").text(data.wind.speed)
+        $(".weatherMain").text(data.weather.main)
 
 
     }
@@ -206,23 +284,18 @@
     
 
 
-    //var apiKey = "apiKey=f02c9d53ce0c4884b75db0cc20553b56"
 
 
-//Get Weather Function & API 
-function getWeather(city){
-  var weatherAPIKey = "166a433c57516f51dfab1f7edaed8413";
-  var queryWeatherURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + weatherAPIKey;
-  
-  $.ajax({
-    url: queryWeatherURL,
-    method: "GET"
-  }).done(function(response) {
-      console.log(response);
-  });
-}
-//to call getWeather function for testing
-getWeather("San Francisco");
+
+
+
+
+
+
+
+
+
+
 
 //Get Currency Function & API 
 function getCurrency(country){
