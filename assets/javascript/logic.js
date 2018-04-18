@@ -205,7 +205,8 @@
 });
     
 
-    var apiKey = "apiKey=f02c9d53ce0c4884b75db0cc20553b56"
+
+    //var apiKey = "apiKey=f02c9d53ce0c4884b75db0cc20553b56"
 
 
 //Get Weather Function & API 
