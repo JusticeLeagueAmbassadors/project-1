@@ -22,6 +22,8 @@
 
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
 </head>
 
 <body id="home-bg">
@@ -122,7 +124,7 @@
 
 	<section id="contactInfo"> 
 		<div class="container">
-			<form id="contact-form" method="post" action="contact.php" role="form">
+			<form id="contact-form" role="form">
 
 				<div class="messages"></div>
 
@@ -131,8 +133,8 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="form_name">First Name *</label>
-								<input id="form_name" type="text" name="name" class="form-control" placeholder="First Name" required="required" data-error="Firstname is required.">
+								<label for="form_firstname">First Name *</label>
+								<input id="form_firstname" type="text" name="name" class="form-control" placeholder="First Name" required="required" data-error="Firstname is required.">
 								<div class="help-block with-errors"></div>
 							</div>
 						</div>
@@ -169,7 +171,7 @@
 							</div>
 						</div>
 						<div class="col-md-12">
-							<input type="submit" class="btn btn-success btn-send" value="Send message">
+							<input type="submit" id="submit-button" class="btn btn-success btn-send" value="Send message">
 						</div>
 					</div>
 
