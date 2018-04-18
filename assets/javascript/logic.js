@@ -15,7 +15,6 @@
 
         }
 
-
     
     $(document).on("click", "#userInput", function(){
 
@@ -53,21 +52,16 @@
                 console.log("News", data)
 
                 // newscleaner(data)
-                htmlpusher(data)
-            })
-          
-var config = {
-    apiKey: "AIzaSyDETKaOq8ZXf9ZantwXr2QqUUmD7cir1Yc",
-    authDomain: "group-project1-ba977.firebaseapp.com",
-    databaseURL: "https://group-project1-ba977.firebaseio.com",
-    projectId: "group-project1-ba977",
-    storageBucket: "",
-    messagingSenderId: "715464343643"
-  };
-  
-  firebase.initializeApp(config);
+                for (var i=0 ; i<=5; i++){
 
-  var database = firebase.database();
+                    var content = data.articles[i].description
+                        htmlpusher(content)
+    
+                }
+            })
+
+        }
+          
 
     //call for Country Rest api
 
@@ -87,12 +81,11 @@ var config = {
 
             console.log("country", data)
 
+       
+
         })
 
 }
-
-
-
 
 
     function htmlpusher(content){
@@ -160,6 +153,7 @@ var config = {
     //         }
         
 
+
     $(document).on("click", "#submit-button", function(){
     event.preventDefault();
 
@@ -190,4 +184,18 @@ var config = {
     var apiKey = "apiKey=f02c9d53ce0c4884b75db0cc20553b56"
     
     
+    var config = {
+        apiKey: "AIzaSyDETKaOq8ZXf9ZantwXr2QqUUmD7cir1Yc",
+        authDomain: "group-project1-ba977.firebaseapp.com",
+        databaseURL: "https://group-project1-ba977.firebaseio.com",
+        projectId: "group-project1-ba977",
+        storageBucket: "",
+        messagingSenderId: "715464343643"
+      };
+      
+      firebase.initializeApp(config);
     
+      var database = firebase.database();
+
+
+
