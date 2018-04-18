@@ -50,7 +50,8 @@ html {
 }
 
 #imaginary_container{
-  margin-top:300px;
+  margin-top:200px;
+  margin-bottom: 300px;
   background-color: white; 
   border-radius: 20px;
   border: 1px solid transparent;
@@ -327,3 +328,38 @@ img:hover {
 }
 
 
+
+ /* News Container */
+
+ .news-container{
+
+  margin: 0px;
+  padding: 0px;
+
+ }
+
+ .newsbox {
+
+  width: 30%;
+  border: solid 1px red;
+  height: 70px;
+  margin: 10px;
+  float: left;
+ }
+
+ .newsheader {
+
+  
+  width: 100%;
+  text-align: center;
+ }
+ 
+ 
+ 
+ .newstext {
+
+  width: 100%;
+  margin: 3px;
+  text-overflow: inline;
+  
+ }
