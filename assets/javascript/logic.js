@@ -1,46 +1,179 @@
 
-    //getting country name from input
+    // This object is for keeping api keys and url's
+
+        var query = {
+
+            news : {
+                apiKey : "apiKey=fddcbeb7b30d45e79b7d2d524b03f140",
+                url : "https://newsapi.org/v2/everything?q="
+            },
+
+            country : {
+                url :  "https://restcountries.eu/rest/v2/name/",
+                addurl : "?fullText=true"
+            }
+
+        }
+
+
     
     $(document).on("click", "#userInput", function(){
-        var userInput = $("#autocomplete").val().trim()
-        
-        querymaker(userInput);
+
+        //userInput variable for search result
+
+        var userInput = ""
+
+        userInput = $("#autocomplete").val().trim()
+
+
+        //make sure user input is not empty
+        if (userInput) {
+        newsapicall(userInput);
+        countryapicall(userInput)
+    }
+
+
     });
     
     
-    function  querymaker(x) {
+   
+    //call for News api
+        function  newsapicall(x) {
         
-        var apiKey = "apiKey=fddcbeb7b30d45e79b7d2d524b03f140"
-    
-        var queryURL = "https://newsapi.org/v2/everything?q="
 
-            queryURL += x.toLowerCase() + "&" + apiKey
+            query.news.url += x.toLowerCase() + "&" + query.news.apiKey
 
-            console.log(queryURL)
-        call(queryURL)
 
- }
+            $.ajax({
+                url: query.news.url,
+                method: "GET"
+            }) .then (function (result){
+       
+                var data = result
+                console.log("News", data)
 
- function call(path) {
+                // newscleaner(data)
+                htmlpusher(data)
+            })
 
-     $.ajax({
-         url: path,
-         method: "GET"
-     }) .then (function (result){
-
-         var data = result
-         console.log(data)
-         
-     })
- }
+}
 
 
 
+
+    //call for Country Rest api
+
+    function  countryapicall(x) {
+        
+        query.country.url += x.toLowerCase();
+
+     
+       
+        $.ajax({
+            url: query.country.url,
+            method: "GET"
+        }) .then (function (result){
+   
+            var data = result
+
+
+            console.log("country", data)
+
+        })
+
+}
+
+
+
+
+
+
+
+    function htmlpusher(content){
+
+        //creating news container
+
+        var newsbox = $("<div/>")
+
+        newsbox.attr("class", "newsbox")
+
+        //news content
+        var newsboxcontent = $("<div/>")
+
+        newsboxcontent.attr("class", "newsboxcontent")
+        
+        
+        //news header
+        var newsheader = $("<div/>")
+
+        newsheader.attr("class", "newsheader")
+        
+        //news text
+        var newstext = $("<div/>")
+
+        newstext.attr("class", "newstext")
+
+        newstext.text(content)
+
+        
+
+        newsboxcontent.append(newsheader, newstext)
+
+        newsbox.append(newsboxcontent)
+
+        $(".news-container").append(newsbox)
+
+
+
+    }
+
+
+    //as our news api is not perfect , I decided to write some code here that will not show spam news
+
+    // function newscleaner(data){
+
+    //     var news = [];
+        
+
+
+    //     console.log("datacheck",  data.articles[0].description)
+
+
+
+    //     for (var i = 0; i <= data.articles.length; i++ ){
+
+    //         var checkword = data.article[i].title.indexOf("Azerbaijan")
+
+    //         console.log(checkword)
+
+    //         if ( checkword !== -1) {
+
+
+    //             console.log("Yaay!")
+
+    //         }
+        
+
+
+
+
+    // }
+
+
+    // }
+
+
+
+
+
+
+
+ 
  // Tooltip only Text
-    $('.masterTooltip').hover(function(){
-        // Hover over code
-        var title = $(this).attr('title');
-        $(this).data('tipText', title).removeAttr('title');
+ $('.masterTooltip').hover(function(){
+     // Hover over code
+     var title = $(this).attr('title');
+     $(this).data('tipText', title).removeAttr('title');
         $('<p class="tooltip"></p>')
         .text(title)
         .appendTo('body')
@@ -55,6 +188,8 @@
         $('.tooltip')
         .css({ top: mousey, left: mousex })
     });
-
-
+    // Tooltip only Text Ends
+    
+    
+    
     
