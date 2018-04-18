@@ -1,5 +1,5 @@
 
-    // This object is for keeping api keys and url's
+   // This object is for keeping api keys and url's
 
         var query = {
 
@@ -55,11 +55,19 @@
                 // newscleaner(data)
                 htmlpusher(data)
             })
+          
+var config = {
+    apiKey: "AIzaSyDETKaOq8ZXf9ZantwXr2QqUUmD7cir1Yc",
+    authDomain: "group-project1-ba977.firebaseapp.com",
+    databaseURL: "https://group-project1-ba977.firebaseio.com",
+    projectId: "group-project1-ba977",
+    storageBucket: "",
+    messagingSenderId: "715464343643"
+  };
+  
+  firebase.initializeApp(config);
 
-}
-
-
-
+  var database = firebase.database();
 
     //call for Country Rest api
 
@@ -82,8 +90,6 @@
         })
 
 }
-
-
 
 
 
@@ -154,42 +160,34 @@
     //         }
         
 
+    $(document).on("click", "#submit-button", function(){
+    event.preventDefault();
 
+    var firstName = $('#form_firstname').val().trim();
+    var lastName = $('#form_lastname').val().trim();
+    var email = $('#form_email').val().trim();
+    var phone = $('#form_phone').val().trim();
+    var message = $('#form_message').val().trim();
 
+    database.ref().push({
+        
+        firstname: firstName,
+        lastname: lastName,
+        email: email,
+        phone: phone,
+        message: message
+    })
 
-    // }
+    $('#form_firstname').val("");
+    $('#form_lastname').val("");
+    $('#form_email').val("");
+    $('#form_phone').val("");
+    $('#form_message').val("");
 
-
-    // }
-
-
-
-
-
-
-
- 
- // Tooltip only Text
- $('.masterTooltip').hover(function(){
-     // Hover over code
-     var title = $(this).attr('title');
-     $(this).data('tipText', title).removeAttr('title');
-        $('<p class="tooltip"></p>')
-        .text(title)
-        .appendTo('body')
-        .fadeIn('slow');
-    }, function() {
-        // Hover out code
-        $(this).attr('title', $(this).data('tipText'));
-        $('.tooltip').remove();
-    }).mousemove(function(e) {
-        var mousex = e.pageX + 20; //Get X coordinates
-        var mousey = e.pageY + 10; //Get Y coordinates
-        $('.tooltip')
-        .css({ top: mousey, left: mousex })
-    });
-    // Tooltip only Text Ends
+});
     
+
+    var apiKey = "apiKey=f02c9d53ce0c4884b75db0cc20553b56"
     
     
     
