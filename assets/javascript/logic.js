@@ -291,6 +291,10 @@ for (var key in countries) {
 
     var queryURL = "https://newsapi.org/v2/everything?q="
 
+    var bypass = "https://cors-anywhere.herokuapp.com/"
+
+    queryURL = bypass + queryURL
+
     function  querymaker(x) {
 
      queryURL += x.toLowerCase() + "&" + apiKey
