@@ -101,8 +101,6 @@ $(document).on("click", "#userInput", function(){
 
                     var content = data.articles[i]
                     htmlpushernews(content)
-                    console.log(content.length)
-
                 }
             })
     }
@@ -135,74 +133,74 @@ $(document).on("click", "#userInput", function(){
 }
 
     //dinamically push news
-    // function htmlpushernews(content){
-
-    //     //creating news container
-    //     console.log(content)
-
-    //     var newsbox = $("<div/>").addClass("newsbox");
-
-    //     //news content
-    //     var newsboxcontent = $("<div/>").addClass("newsboxcontent");
-
-
-    //     //news header
-    //     var newsheader = $("<div/>").addClass("newsheader");
-
-    //     newsheader.text(content.title)
-
-
-    //     //news img
-
-    //     var newsimg = $("<img/>").attr("src", content.urlToImage)
-    //   
-
-    //     //news text
-    //     var newstext = $("<div/>").addClass("newstext")
-
-    //     // var newsUrl = $("<a class='news-link' target='_blank' href='" + content.url + "'>")
-    //     // newsUrl.attr("src", content.url)
-
-    //     newstext.text(content.description)
-
-
-    //     newsboxcontent.append(newsheader, newsimg, newstext)
-
-    //     newsbox.append(newsboxcontent)
-
-    //     $(".news-container").append(newsbox)
-
-    // }
-
-
     function htmlpushernews(content){
 
-        var news = [
+        //creating news container
+        console.log(content)
 
-        {   
-        },
+        var newsbox = $("<div/>").addClass("newsbox");
 
-        {  
-        },
-
-        {   
-        },
-
-        {  
-        }
-        ]
+        //news content
+        var newsboxcontent = $("<div/>").addClass("newsboxcontent");
 
 
-      for(var i=0 ; i< content.length ; i++) {
-        $('<div class="item"><img src="'+m[i]+'"><div class="carousel-caption"></div>   </div>').appendTo('.carousel-inner');
-        $('<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>').appendTo('.carousel-indicators')
+        //news header
+        var newsheader = $("<div/>").addClass("newsheader");
+
+        newsheader.text(content.title)
+
+
+        //news img
+
+        var newsimg = $("<img/>").attr("src", content.urlToImage)
+      
+
+        //news text
+        var newstext = $("<div/>").addClass("newstext")
+
+        // var newsUrl = $("<a class='news-link' target='_blank' href='" + content.url + "'>")
+        // newsUrl.attr("src", content.url)
+
+        newstext.text(content.description)
+
+
+        newsboxcontent.append(newsheader, newsimg, newstext)
+
+        newsbox.append(newsboxcontent)
+
+        $(".news-container").append(newsbox)
 
     }
-    $('.item').first().addClass('active');
-    $('.carousel-indicators > li').first().addClass('active');
-    $('#myCarousel').carousel();
+
+
+//     function htmlpushernews(content){
+
+//         var news = [
+
+//         {   
+//         },
+
+//         {  
+//         },
+
+//         {   
+//         },
+
+//         {  
+//         }
+//         ]
+
+
+//       for(var i=0 ; i< content.length ; i++) {
+//         $('<div class="item"><img src="'+m[i]+'"><div class="carousel-caption"></div>   </div>').appendTo('.carousel-inner');
+//         $('<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>').appendTo('.carousel-indicators')
+
+//     }
+//     $('.item').first().addClass('active');
+//     $('.carousel-indicators > li').first().addClass('active');
+//     $('#myCarousel').carousel();
    
-}
+// }
 
 
     //dinamically push country info
