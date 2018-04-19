@@ -153,6 +153,7 @@ $(document).on("click", "#userInput", function(){
         //news img
 
         var newsimg = $("<img/>").attr("src", content.urlToImage)
+        newsimg.addClass("newsImg")
       
 
         //news text
