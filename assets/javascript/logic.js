@@ -1,108 +1,128 @@
 
-    var config = {
-        apiKey: "AIzaSyDETKaOq8ZXf9ZantwXr2QqUUmD7cir1Yc",
-        authDomain: "group-project1-ba977.firebaseapp.com",
-        databaseURL: "https://group-project1-ba977.firebaseio.com",
-        projectId: "group-project1-ba977",
-        storageBucket: "",
-        messagingSenderId: "715464343643"
-      };
-      
-      firebase.initializeApp(config);
-    
-      var database = firebase.database();
-    
+var config = {
+    apiKey: "AIzaSyDETKaOq8ZXf9ZantwXr2QqUUmD7cir1Yc",
+    authDomain: "group-project1-ba977.firebaseapp.com",
+    databaseURL: "https://group-project1-ba977.firebaseio.com",
+    projectId: "group-project1-ba977",
+    storageBucket: "",
+    messagingSenderId: "715464343643"
+};
+
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
+/*Anonymous function to hide components of the page 
+when the page loads*/
+$(document).ready(function() {
+    $("section#countryinfo").hide();
+    $("section#contactInfo").hide();
+    $(".about-us-container").hide();
+
+});
+
+
     // animated scroll-down once you click on "Who We Are"
     $(document).on("click", "#links", function(){
-    $('html, body').animate({
-        scrollTop: $("#aboutUs").offset().top
-    }, 1000);  
-});
+        $('html, body').animate({
+
+            scrollTop: $("#aboutUs").offset().top
+        }, 
+
+        1000);
+        console.log("This is running!")  
+        $(".about-us-container").show();
+        $(".about-us-container").scrollIntoView();
+    });
 
    // This object is for keeping api keys and url's
 
-        var query = {
+   var query = {
 
-            news : {
-                apiKey : "apiKey=fddcbeb7b30d45e79b7d2d524b03f140",
-                url : "https://newsapi.org/v2/everything?q="
-            },
+    news : {
+        apiKey : "apiKey=fddcbeb7b30d45e79b7d2d524b03f140",
+        url : "https://newsapi.org/v2/everything?q="
+    },
 
-            country : {
-                url :  "https://restcountries.eu/rest/v2/name/",
-                addurl : "?fullText=true"
-            },
+    country : {
+        url :  "https://restcountries.eu/rest/v2/name/",
+        addurl : "?fullText=true"
+    },
 
-            weather: {
+    weather: {
 
-                apiKey : "&APPID=166a433c57516f51dfab1f7edaed8413",
-                url: "http://api.openweathermap.org/data/2.5/weather?q="
+        apiKey : "&APPID=166a433c57516f51dfab1f7edaed8413",
+        url: "http://api.openweathermap.org/data/2.5/weather?q="
 
-            }
+    }
 
-        }
-    
-    $(document).on("click", "#userInput", function(){
+}
+
+$(document).on("click", "#userInput", function(){
 
         //userInput variable for search result
 
         var userInput = ""
 
         userInput = $("#autocomplete").val().trim()
-        document.getElementById("countryinfo").scrollIntoView();
-
+        
         //make sure user input is not empty
         if (userInput) {
-        newsapicall(userInput);
-        countryapicall(userInput)
-    }
+            newsapicall(userInput);
+            countryapicall(userInput)
+        }
+
+        /*Anonymous function to show components of the page 
+        when the page loads*/
+        $("#search").val("");
+        $("section#countryinfo").show();
+        $("section#contactInfo").show();
+        $(".about-us-container").show();
+        document.getElementById("countryinfo").scrollIntoView();
 
     });
 
-
     //call for News api
-     function  newsapicall(x) {
-        
+    function  newsapicall(x) {
+
         //create variable to not to override our object
-         var ajaxurl =   query.news.url + x.toLowerCase() + "&" + query.news.apiKey
+        var ajaxurl =   query.news.url + x.toLowerCase() + "&" + query.news.apiKey
 
 
-            $.ajax({
-                url: ajaxurl,
-                method: "GET"
-            }) .then (function (result){
-       
-                var data = result
-                console.log("News", data)
+        $.ajax({
+            url: ajaxurl,
+            method: "GET"
+        }) .then (function (result){
+
+            var data = result
+            console.log("News", data)
 
                 // newscleaner(data)
                 for (var i=0 ; i<=2; i++){
 
                     var content = data.articles[i]
-                        htmlpushernews(content)
+                    htmlpushernews(content)
 
                 }
             })
+    }
 
-        }
-          
 
     //call for Country Rest api
 
     function countryapicall(x) {
-        
+
        var ajaxurl = query.country.url + x.toLowerCase();
 
-           
-        $.ajax({
-            url: ajaxurl,
-            method: "GET"
-        }) .then (function (result){
-   
-            var data = result
 
+       $.ajax({
+        url: ajaxurl,
+        method: "GET"
+    }) .then (function (result){
 
-            console.log("country", data)
+        var data = result
+
+        console.log("country", data)
 
             //function to show data in html
             htmlpushercountryinfo(data)
@@ -117,14 +137,12 @@
     //dinamically push news
     function htmlpushernews(content){
 
-        
         //creating news container
 
         var newsbox = $("<div/>")
 
         newsbox.attr("class", "newsbox")
-        newsbox.val("value", 1)
-
+        
         //news content
         var newsboxcontent = $("<div/>")
 
@@ -144,7 +162,6 @@
         var newsimg = $("<img/>")
         newsimg.attr("src", content.urlToImage)
 
-
         
         //news text
         var newstext = $("<div/>")
@@ -153,7 +170,6 @@
 
         newstext.text(content.description)
 
-        
 
         newsboxcontent.append(newsheader, newsimg, newstext)
 
@@ -198,12 +214,12 @@
         $.ajax({
           url: queryWeatherURL,
           method: "GET"
-        }).done(function(response) {
-            console.log(response);
+      }).done(function(response) {
+        console.log(response);
 
-            htmlpusherweather(response)
-        });
-    }
+        htmlpusherweather(response)
+    });
+  }
 
     //push weather info to html
     function htmlpusherweather(data){
@@ -223,37 +239,37 @@
 
 
     $(document).on("click", "#submit-button", function(){
-    event.preventDefault();
+        event.preventDefault();
 
-    var firstName = $('#form_firstname').val().trim();
-    var lastName = $('#form_lastname').val().trim();
-    var email = $('#form_email').val().trim();
-    var phone = $('#form_phone').val().trim();
-    var message = $('#form_message').val().trim();
+        var firstName = $('#form_firstname').val().trim();
+        var lastName = $('#form_lastname').val().trim();
+        var email = $('#form_email').val().trim();
+        var phone = $('#form_phone').val().trim();
+        var message = $('#form_message').val().trim();
 
-    database.ref().push({
-        
-        firstname: firstName,
-        lastname: lastName,
-        email: email,
-        phone: phone,
-        message: message
-    })
+        database.ref().push({
 
-    $('#form_firstname').val("");
-    $('#form_lastname').val("");
-    $('#form_email').val("");
-    $('#form_phone').val("");
-    $('#form_message').val("");
+            firstname: firstName,
+            lastname: lastName,
+            email: email,
+            phone: phone,
+            message: message
+        })
 
-});
-  
+        $('#form_firstname').val("");
+        $('#form_lastname').val("");
+        $('#form_email').val("");
+        $('#form_phone').val("");
+        $('#form_message').val("");
+
+    });
+
     // enter will push search button
 
-$(document).keypress(function(e) {
-    if(e.which == 13) {
-       $("#userInput").click()
-    }
-});
+    $(document).keypress(function(e) {
+        if(e.which == 13) {
+           $("#userInput").click()
+       }
+   });
 
 
