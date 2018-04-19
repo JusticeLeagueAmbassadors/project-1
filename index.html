@@ -4,8 +4,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Travel Buddy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	crossorigin="anonymous"></script>
@@ -18,7 +22,7 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
+	
 	<script src="https://use.fontawesome.com/ca25f2cf2e.js"></script>
 
 	<link href="assets/css/weather.css" rel="stylesheet">	
@@ -57,6 +61,7 @@
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" id="links">
+
 							<li><a href="#aboutUs">Meet the Team</a></li>
 						</ul>
 					</li>
@@ -68,12 +73,76 @@
 		<!-- /.container-fluid -->
 	</nav>
 
+
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="assets/images/london.jpg" alt="London">
+			</div>
+
+			<div class="item">
+				<img src="assets/images/san francisco.jpg" alt="San Francisco">
+			</div>
+
+			<div class="item">
+				<img src="assets/images/tokyo.jpg" alt="Tokyo">
+			</div>
+			<div class="item">
+				<img src="assets/images/new york.jpg" alt="New York">
+			</div>
+
+			<div class="item">
+				<img src="assets/images/chicago.jpg" alt="Chicago">
+			</div>
+			<div class="item">
+				<img src="assets/images/moscow.jpg" alt="Moscow">
+			</div>
+
+			<div class="item">
+				<img src="assets/images/brazil.jpg" alt="Sao Paulo">
+			</div>
+			<div class="item">
+				<img src="assets/images/iceland.jpg" alt="Iceland">
+			</div>
+
+			<div class="item">
+				<img src="assets/images/spain.jpg" alt="Spain">
+			</div>
+			<div class="item">
+				<img src="assets/images/turkey.jpg" alt="Turkey">
+			</div>
+
+			<div class="item">
+				<img src="assets/images/morocco.jpg" alt="Morocco">
+			</div>
+		</div>
+
+		<!-- Left and right controls -->
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+
+
 	
 	<!-- Input value -->
 	<div class="container mainpage">
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3">
-				<div>
+				<div id="column">
 					<div class="input-group stylish-input-group" id="imaginary_container">
 						<input id="autocomplete" type="text" data-provide="typeahead" class="form-control" placeholder="Explore">
 						<span class="input-group-addon" id="search">
@@ -86,8 +155,7 @@
 				</div>
 			</div>
 		</div>
-	</div>	
-
+	</div>		
 
 	<section id="countryinfo">
 
@@ -96,7 +164,23 @@
 
 			<div class="container news-container">
 
-				<!-- Dinamically Pushing News Here -->
+				<div id="myCarousel" class="carousel slide">
+					<!-- Indicators -->
+					<ol class="carousel-indicators"></ol>
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner"></div>
+
+					<!-- Left and right controls -->
+					<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#myCarousel" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
 
 			</div>
 
@@ -233,15 +317,15 @@
 				<div class="social-buttons">
 					<!-- <a  target="_blank" href="#" class="btn btn-social btn-github btn-simple">
 						<i class="fab fa-github"></i> -->
-					<!-- </a> -->
-					<a target="_blank" href="https://www.linkedin.com/in/rebecca-li-479b184" class="btn btn-social btn-linkedin btn-simple"><i class="fa fa-linkedin-square"></i></a>                                    
+						<!-- </a> -->
+						<a target="_blank" href="https://www.linkedin.com/in/rebecca-li-479b184" class="btn btn-social btn-linkedin btn-simple"><i class="fa fa-linkedin-square"></i></a>                                    
+					</div>
 				</div>
-			</div>
-			<div class="col-md-3"><img src="assets/images/daniel.png" class="img-fluid" alt="Responsive image">
-				<div class="big-text">Daniel</div>
-				<p class="small-text">Daniel is a musician and educator turned web developer (does any musician "stop" being a musician? no, they don't). Originally from San Diego, Daniel has been living in the Bay Area for nearly 20 years.</p>
+				<div class="col-md-3"><img src="assets/images/daniel.png" class="img-fluid" alt="Responsive image">
+					<div class="big-text">Daniel</div>
+					<p class="small-text">Daniel is a musician and educator turned web developer (does any musician "stop" being a musician? no, they don't). Originally from San Diego, Daniel has been living in the Bay Area for nearly 20 years.</p>
 
-				<div class="social-buttons">
+					<div class="social-buttons">
 					<!-- <a  target="_blank" href="#" class="btn btn-social btn-github btn-simple">
 						<i class="fab fa-github"></i>
 					</a> -->

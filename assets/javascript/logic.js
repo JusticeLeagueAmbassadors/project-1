@@ -21,7 +21,6 @@ $(document).ready(function() {
 
 });
 
-
     // animated scroll-down once you click on "Who We Are"
     $(document).on("click", "#links", function(){
         $('html, body').animate({
@@ -32,7 +31,7 @@ $(document).ready(function() {
         1000);
         console.log("This is running!")  
         $(".about-us-container").show();
-        $(".about-us-container").scrollIntoView();
+        document.getElementById("about-us-container").scrollIntoView();
     });
 
    // This object is for keeping api keys and url's
@@ -102,6 +101,7 @@ $(document).on("click", "#userInput", function(){
 
                     var content = data.articles[i]
                     htmlpushernews(content)
+                    console.log(content.length)
 
                 }
             })
@@ -112,10 +112,10 @@ $(document).on("click", "#userInput", function(){
 
     function countryapicall(x) {
 
-       var ajaxurl = query.country.url + x.toLowerCase();
+     var ajaxurl = query.country.url + x.toLowerCase();
 
 
-       $.ajax({
+     $.ajax({
         url: ajaxurl,
         method: "GET"
     }) .then (function (result){
@@ -135,49 +135,75 @@ $(document).on("click", "#userInput", function(){
 }
 
     //dinamically push news
+    // function htmlpushernews(content){
+
+    //     //creating news container
+    //     console.log(content)
+
+    //     var newsbox = $("<div/>").addClass("newsbox");
+
+    //     //news content
+    //     var newsboxcontent = $("<div/>").addClass("newsboxcontent");
+
+
+    //     //news header
+    //     var newsheader = $("<div/>").addClass("newsheader");
+
+    //     newsheader.text(content.title)
+
+
+    //     //news img
+
+    //     var newsimg = $("<img/>").attr("src", content.urlToImage)
+    //   
+
+    //     //news text
+    //     var newstext = $("<div/>").addClass("newstext")
+
+    //     // var newsUrl = $("<a class='news-link' target='_blank' href='" + content.url + "'>")
+    //     // newsUrl.attr("src", content.url)
+
+    //     newstext.text(content.description)
+
+
+    //     newsboxcontent.append(newsheader, newsimg, newstext)
+
+    //     newsbox.append(newsboxcontent)
+
+    //     $(".news-container").append(newsbox)
+
+    // }
+
+
     function htmlpushernews(content){
 
-        //creating news container
+        var news = [
 
-        var newsbox = $("<div/>")
+        {   
+        },
 
-        newsbox.attr("class", "newsbox")
-        
-        //news content
-        var newsboxcontent = $("<div/>")
+        {  
+        },
 
-        newsboxcontent.attr("class", "newsboxcontent")
-        
-        
-        //news header
-        var newsheader = $("<div/>")
+        {   
+        },
 
-        newsheader.attr("class", "newsheader")
-
-        newsheader.text(content.title)
+        {  
+        }
+        ]
 
 
-        //news img
-
-        var newsimg = $("<img/>")
-        newsimg.attr("src", content.urlToImage)
-
-        
-        //news text
-        var newstext = $("<div/>")
-
-        newstext.attr("class", "newstext")
-
-        newstext.text(content.description)
-
-
-        newsboxcontent.append(newsheader, newsimg, newstext)
-
-        newsbox.append(newsboxcontent)
-
-        $(".news-container").append(newsbox)
+      for(var i=0 ; i< content.length ; i++) {
+        $('<div class="item"><img src="'+m[i]+'"><div class="carousel-caption"></div>   </div>').appendTo('.carousel-inner');
+        $('<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>').appendTo('.carousel-indicators')
 
     }
+    $('.item').first().addClass('active');
+    $('.carousel-indicators > li').first().addClass('active');
+    $('#myCarousel').carousel();
+   
+}
+
 
     //dinamically push country info
     function htmlpushercountryinfo(result) {
@@ -268,8 +294,12 @@ $(document).on("click", "#userInput", function(){
 
     $(document).keypress(function(e) {
         if(e.which == 13) {
-           $("#userInput").click()
-       }
-   });
+         $("#userInput").click()
+     }
+ });
+
+    $('.carousel').carousel({
+      interval: 50000
+  })
 
 
