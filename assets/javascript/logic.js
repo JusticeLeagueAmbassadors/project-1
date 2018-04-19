@@ -1,4 +1,4 @@
-    
+
     var config = {
         apiKey: "AIzaSyDETKaOq8ZXf9ZantwXr2QqUUmD7cir1Yc",
         authDomain: "group-project1-ba977.firebaseapp.com",
@@ -12,9 +12,12 @@
     
       var database = firebase.database();
     
-
-    
-
+    // animated scroll-down once you click on "Who We Are"
+    $(document).on("click", "#links", function(){
+    $('html, body').animate({
+        scrollTop: $("#aboutUs").offset().top
+    }, 1000);  
+});
 
    // This object is for keeping api keys and url's
 
@@ -163,8 +166,6 @@
 
         $(".news-container").append(newsbox)
 
-     
-
     }
 
     //dinamically push country info
@@ -220,7 +221,7 @@
         $(".weatherHumidity").text(data.main.humidity)
         $(".weatherWind").text(data.wind.speed)
         $(".weatherMain").text(data.weather.main)
-
+        console.log(htmlpusherweather);
 
     }
 
