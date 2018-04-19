@@ -215,7 +215,7 @@ $(document).on("click", "#userInput", function(){
         $(".regionText").text("Region: " + result[0].region)
 
 
-        $(".capitalText").text("Capital:"  + result[0].capital)
+        $(".capitalText").text("Capital: "  + result[0].capital)
 
 
         $(".currencyText").text("Currency: " +  result[0].currencies[0].code)
