@@ -29,8 +29,9 @@ $(document).ready(function() {
         }, 
 
         1000);
-        console.log("This is running!")  
+         console.log("This is running!") 
         $(".about-us-container").show();
+
         document.getElementById("about-us-container").scrollIntoView();
     });
 
@@ -86,6 +87,7 @@ $(document).on("click", "#userInput", function(){
 
         //create variable to not to override our object
         var ajaxurl =   query.news.url + x.toLowerCase() + "&" + query.news.apiKey
+        $('.news-container').html("");
 
 
         $.ajax({
@@ -98,9 +100,7 @@ $(document).on("click", "#userInput", function(){
 
                 // newscleaner(data)
                 for (var i=0 ; i<=2; i++){
-
-                    var content = data.articles[i]
-                    htmlpushernews(content)
+                    htmlpushernews(data.articles[i])
                 }
             })
     }
@@ -152,19 +152,21 @@ $(document).on("click", "#userInput", function(){
 
         //news img
 
-        var newsimg = $("<img/>").attr("src", content.urlToImage)
+        //var newsimg = $("<img/>").attr("src", content.urlToImage)
+        //newsimg.addClass("newsImg")
       
-
+        
         //news text
         var newstext = $("<div/>").addClass("newstext")
 
-        // var newsUrl = $("<a class='news-link' target='_blank' href='" + content.url + "'>")
-        // newsUrl.attr("src", content.url)
+        var newsUrl = $("<a class='news-link' target='_blank' href='" + content.url + "'>" + "'<img  src="+  content.urlToImage +"class='newsImg'"+"'>" )
+        //newsUrl.attr("src", content.url)
 
         newstext.text(content.description)
 
+        //newsimg.append(mewsUrl)
 
-        newsboxcontent.append(newsheader, newsimg, newstext)
+        newsboxcontent.append(newsheader,newsUrl , newstext)
 
         newsbox.append(newsboxcontent)
 
