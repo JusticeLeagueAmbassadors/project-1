@@ -41,7 +41,6 @@
             }
 
         }
-
     
     $(document).on("click", "#userInput", function(){
 
@@ -50,20 +49,17 @@
         var userInput = ""
 
         userInput = $("#autocomplete").val().trim()
-
+        document.getElementById("countryinfo").scrollIntoView();
 
         //make sure user input is not empty
         if (userInput) {
         newsapicall(userInput);
         countryapicall(userInput)
-
     }
 
-
     });
-    
-    
-   
+
+
     //call for News api
      function  newsapicall(x) {
         
@@ -93,7 +89,7 @@
 
     //call for Country Rest api
 
-    function  countryapicall(x) {
+    function countryapicall(x) {
         
        var ajaxurl = query.country.url + x.toLowerCase();
 
@@ -127,6 +123,7 @@
         var newsbox = $("<div/>")
 
         newsbox.attr("class", "newsbox")
+        newsbox.val("value", 1)
 
         //news content
         var newsboxcontent = $("<div/>")
@@ -188,8 +185,6 @@
 
         $(".callingCodeText").text("Calling Code: " + +  result[0].callingCodes[0])
 
-
-
     }
 
 
@@ -224,10 +219,7 @@
     }
 
 
-
-
-
-     // sending contact info into firebase
+    // sending contact info into firebase
 
 
     $(document).on("click", "#submit-button", function(){
@@ -255,8 +247,7 @@
     $('#form_message').val("");
 
 });
-    
-
+  
     // enter will push search button
 
 $(document).keypress(function(e) {
@@ -264,7 +255,5 @@ $(document).keypress(function(e) {
        $("#userInput").click()
     }
 });
-
-
 
 
