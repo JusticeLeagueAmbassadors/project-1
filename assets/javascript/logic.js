@@ -56,6 +56,7 @@
         if (userInput) {
         newsapicall(userInput);
         countryapicall(userInput)
+
     }
 
 
@@ -66,12 +67,12 @@
     //call for News api
      function  newsapicall(x) {
         
-
-            query.news.url += x.toLowerCase() + "&" + query.news.apiKey
+        //create variable to not to override our object
+         var ajaxurl =   query.news.url + x.toLowerCase() + "&" + query.news.apiKey
 
 
             $.ajax({
-                url: query.news.url,
+                url: ajaxurl,
                 method: "GET"
             }) .then (function (result){
        
@@ -83,6 +84,7 @@
 
                     var content = data.articles[i]
                         htmlpushernews(content)
+
     
                 }
             })
@@ -94,12 +96,12 @@
 
     function  countryapicall(x) {
         
-        query.country.url += x.toLowerCase();
+       var ajaxurl = query.country.url + x.toLowerCase();
 
      
        
         $.ajax({
-            url: query.country.url,
+            url: ajaxurl,
             method: "GET"
         }) .then (function (result){
    
@@ -121,6 +123,7 @@
     //dinamically push news
     function htmlpushernews(content){
 
+        
         //creating news container
 
         var newsbox = $("<div/>")
@@ -162,8 +165,6 @@
         newsbox.append(newsboxcontent)
 
         $(".news-container").append(newsbox)
-        console.log(htmlpushernews);
-
 
     }
 
@@ -225,31 +226,10 @@
     }
 
 
-    //as our news api is not perfect , I decided to write some code here that will not show spam news
-
-    // function newscleaner(data){
-
-    //     var news = [];
-        
-
-
-    //     console.log("datacheck",  data.articles[0].description)
 
 
 
-    //     for (var i = 0; i <= data.articles.length; i++ ){
 
-    //         var checkword = data.article[i].title.indexOf("Azerbaijan")
-
-    //         console.log(checkword)
-
-    //         if ( checkword !== -1) {
-
-
-    //             console.log("Yaay!")
-
-    //         }
-        
 
 
 
@@ -286,30 +266,14 @@
 });
     
 
+    // enter will push search button
+
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+       $("#userInput").click()
+    }
+});
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-//Get Currency Function & API 
-function getCurrency(country){
-  var queryCurrencyURL = "http://data.fixer.io/api/latest?access_key=943b426312d481a06ca58681641063cf"
-
-  $.ajax({
-    url: queryCurrencyURL,
-    method: "GET"
-  }).done(function(response) {
-    console.log(response);
-  });
-}
-//to call getCurrency fucntion for testing
-getCurrency("Canada")
