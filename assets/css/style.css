@@ -13,7 +13,6 @@ html {
 }
 
 h3 {
-
   font-family: "Bree Serif", serif;
 }
 
@@ -33,10 +32,9 @@ h3 {
 
 } 
 
-.newsImg {
-  background: none repeat scroll 0 0 transparent;
+.news-link > img {
   height: auto;
-  width: 150px;
+  width: 200px;
   margin: 0 auto;
   border-radius: 50%;
   border: 3px solid #c5a47e;
@@ -387,8 +385,8 @@ img:hover {
 
   margin: 0px;
   padding-bottom: 20px;
-  display: flex;
-  justify-content: space-around;
+ /* display: flex;
+ justify-content: space-around;*/
 }
 
 .newsbox {
@@ -432,7 +430,6 @@ img:hover {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-
   }
 }
 

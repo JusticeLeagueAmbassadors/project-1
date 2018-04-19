@@ -159,7 +159,8 @@ $(document).on("click", "#userInput", function(){
         //news text
         var newstext = $("<div/>").addClass("newstext")
 
-        var newsUrl = $("<a class='news-link' target='_blank' href='" + content.url + "'>" + "'<img  src="+  content.urlToImage +"class='newsImg'"+"'>" )
+        var newsUrl = $("<a class='news-link' target='_blank' href='" + content.url + "'>" + "'<img src="+  content.urlToImage +">");
+        newsUrl.addClass("newsImg")
         //newsUrl.attr("src", content.url)
 
         newstext.text(content.description)
