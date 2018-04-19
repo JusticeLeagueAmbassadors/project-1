@@ -85,7 +85,6 @@
                     var content = data.articles[i]
                         htmlpushernews(content)
 
-    
                 }
             })
 
@@ -98,8 +97,7 @@
         
        var ajaxurl = query.country.url + x.toLowerCase();
 
-     
-       
+           
         $.ajax({
             url: ajaxurl,
             method: "GET"
@@ -224,13 +222,6 @@
         console.log(htmlpusherweather);
 
     }
-
-
-
-
-
-
-
 
 
 
