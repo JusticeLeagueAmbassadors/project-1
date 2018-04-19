@@ -33,6 +33,8 @@
 
 	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 
+	<link href="assets/css/weather.css" rel="stylesheet">
+
 </head>
 
 <body id="home-bg">
@@ -194,7 +196,7 @@
 	<section id="countryinfo">
 
 		<!-- Weather Container Div Begin-->
-
+<!-- 
 		<div class="container WeatherContainer">
 
 			<div class="weatherHeader">CityName</div>
@@ -208,7 +210,31 @@
 			<div class="weatherMain">Clear</div>
 
 
+		</div> -->
+
+		<div class="container weatherMainContainer">
+
+
+				<div class="row"><h2 class="weatherCityText">CityName</h2></div>
+				
+					<img class="weatherImg" src="assets/images/WeatherImg/Snow.png" alt="" width="70px" height="70px">
+			
+		
+			<div class="row">
+				<div class="container weatherInfoContainer">
+					<div class="row">	
+						<div class="weatherTemp weatherContainer"><h3 class="weatherTempText weatherText">Temperature <br/> 17*</h3></div>
+						<div class="weatherWind weatherContainer"><h3 class="weatherWindText weatherText">Wind <br/> 17km/s</h3></div>
+					</div>
+		
+					<div class="row">
+						<div class="weatherPressure weatherContainer"><h3 class="weatherPressureText weatherText">Pressure <br/> 80 N/m</h3></div>
+						<div class="weatherHumidity weatherContainer"><h3 class="weatherHumidityText weatherText">Humidity <br/> 75%</h3></div>
+					</div>
+				</div>
+			 </div>
 		</div>
+		
 		<!-- Weather Container Div End-->
 
 
