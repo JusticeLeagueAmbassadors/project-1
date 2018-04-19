@@ -249,11 +249,11 @@ $(document).on("click", "#userInput", function(){
     function htmlpusherweather(data){
 
         $(".weatherHeader").text(data.name)
-        $(".weatherTemp").text(data.main.temp)
-        $(".weatherPress").text(data.main.pressure)
-        $(".weatherHumidity").text(data.main.humidity)
-        $(".weatherWind").text(data.wind.speed)
-        $(".weatherMain").text(data.weather.main)
+        $(".weatherTemp").text("Temperature: " + data.main.temp)
+        $(".weatherPress").text("Pressure: " + data.main.pressure)
+        $(".weatherHumidity").text("Humidity: " + data.main.humidity)
+        $(".weatherWind").text("Wind: " + data.wind.speed)
+        $(".weatherMain").text("Main: " + data.weather.main)
         console.log(htmlpusherweather);
 
     }
