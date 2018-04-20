@@ -381,12 +381,23 @@ img:hover {
 
 /* News Container */
 
+#newsInfo {
+
+  margin-top: 100px;
+  padding-bottom: 100px;
+  width: 100%;
+  background-color: #FEC297; 
+  opacity : 0.9;
+}
+
 .news-container{
 
-  margin: 0px;
-  padding-bottom: 20px;
- /* display: flex;
- justify-content: space-around;*/
+  margin-top: 20px;
+  padding-bottom: 100px;
+  width: 100%;
+  background-color: #FEC297; 
+  opacity : 0.9;
+  
 }
 
 .newsbox {
@@ -433,7 +444,7 @@ img:hover {
   }
 }
 
-@media screen and (max-width: 375px) {
+/*@media screen and (max-width: 375px) {
   .news-container{
     position: relative;
     left: 50%;
@@ -441,7 +452,7 @@ img:hover {
     display: flex;
     justify-content: space-around;
   }
-}
+}*/
 
 @media (min-width: 36em){
   body {
