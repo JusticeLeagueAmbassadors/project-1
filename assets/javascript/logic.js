@@ -249,7 +249,7 @@ $(document).on("click", "#userInput", function(){
 
         htmlpusherweather(response)
     });
-  }
+  }a
 
     //push weather info to html
     function htmlpusherweather(data){
