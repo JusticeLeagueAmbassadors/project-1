@@ -249,10 +249,11 @@ $(document).on("click", "#userInput", function(){
 
         htmlpusherweather(response)
     });
-  }
+  }a
 
     //push weather info to html
     function htmlpusherweather(data){
+
 
 
         var Tfar = Math.floor(data.main.temp * (9/5) - 459.67)
@@ -275,6 +276,7 @@ $(document).on("click", "#userInput", function(){
         $(".weatherHumidity").text("Humidity: " + data.main.humidity)
         $(".weatherWind").text("Wind: " + data.wind.speed)
         $(".weatherMain").text("Main: " + data.weather.main)
+
 
 
     }
