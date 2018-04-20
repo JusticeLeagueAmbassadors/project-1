@@ -143,6 +143,31 @@ img {
   font-family: 'Bree Serif', serif;
 }
 
+.WeatherContainer {
+  padding-bottom: 30px;
+}
+
+.panel-default {
+  background-color: #FEC297;
+  border-color: black;
+  border-width: 3px;
+  border-radius: 10px;
+  color: black;
+}
+
+.panel-default .panel-heading {
+  background-color: #FEC297;
+  font-size: 35px;
+  font-weight: bold;
+  border-color: black;
+  border-width: 3px;
+  padding-bottom: 25px;
+}
+
+.table {
+  font-size: 20px;
+}
+
 #countryinfo {
   margin-top: 100px;
   overflow: hidden;

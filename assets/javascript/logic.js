@@ -249,17 +249,17 @@ $(document).on("click", "#userInput", function(){
 
         htmlpusherweather(response)
     });
-  }
+  }a
 
     //push weather info to html
     function htmlpusherweather(data){
 
-        $(".weatherHeader").text(data.name)
-        $(".weatherTemp").text("Temperature: " + data.main.temp)
-        $(".weatherPress").text("Pressure: " + data.main.pressure)
-        $(".weatherHumidity").text("Humidity: " + data.main.humidity)
-        $(".weatherWind").text("Wind: " + data.wind.speed)
-        $(".weatherMain").text("Main: " + data.weather.main)
+        $("#weatherHeader").text(data.name)
+        $("#weatherTemp").text("Temperature: " + data.main.temp)
+        $("#weatherPress").text("Pressure: " + data.main.pressure)
+        $("#weatherHumidity").text("Humidity: " + data.main.humidity)
+        $("#weatherWind").text("Wind: " + data.wind.speed)
+        $("#weatherMain").text("Main: " + data.weather.main)
         console.log(htmlpusherweather);
 
     }
