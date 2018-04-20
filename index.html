@@ -164,126 +164,107 @@
 		</div>
 	</div>		
 
-	<div class="container">
-		<div class="news-header">
-			<h3>Headlines</h3>
+	<section id="newsInfo">
+		<div class="container">
+			<div class="news-header">
+				<h3>Headlines</h3>
+			</div>
+
+			<div class="container news-container"></div>
+
 		</div>
 
-		<div class="container news-container">
 
-			<!-- <div id="myCarousel" class="carousel slide"> -->
-				<!-- Indicators -->
-					<!-- <ol class="carousel-indicators"></ol>
+	</section>
 
-						<! Wrapper for slides -->
-						<!-- <div class="carousel-inner"></div> -->
 
-						<!-- Left and right controls -->
-					<!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-						<span class="glyphicon glyphicon-chevron-left"></span>
-						<span class="sr-only">Previous</span>
-					</a> -->
-					<!-- <a class="right carousel-control" href="#myCarousel" data-slide="next">
-						<span class="glyphicon glyphicon-chevron-right"></span>
-						<span class="sr-only">Next</span> -->
-					<!-- </a>
-					</div> -->
+	<section id="countryinfo">
+
+		<!-- Weather Container Div Begin-->
+
+		<div class="container WeatherContainer">
+
+			<div class="weatherHeader">CityName</div>
+
+			<br>
+
+			<div class="weatherTemp">Temp: </div>
+			<div class="weatherPress">Press: </div>
+			<div class="weatherHumidity">Humidity:</div>
+			<div class="weatherWind">Wind</div>
+			<div class="weatherMain">Clear</div>
+
+
+		</div>
+		<!-- Weather Container Div End-->
+
+
+		<div class="container maininfo">
+
+			<h3 class="countrynameText">Country:</h3>
+			<h3 class="regionText">Region:</h3>
+			<h3 class="capitalText">Capital:</h3>
+			<h3 class="currencyText">Currency:</h3>
+			<h3 class="languagesText">Languages:</h3>
+			<h3 class="callingCodeText">Number Code:</h3>
+			<!-- Country info Dinamically Push Here -->
+
+		</div>
+
+	</section>
+
+	<section id="contactInfo"> 
+		<div class="container">
+			<form id="contact-form" role="form">
+				<div class="row header">
+					<h3>CONTACT US</h3>
 				</div>
 
+				<div class="messages"></div>
 
-			</div>
+				<div class="controls">
 
-
-		</section>
-
-
-		<section id="countryinfo">
-
-			<!-- Weather Container Div Begin-->
-
-			<div class="container WeatherContainer">
-
-				<div class="weatherHeader">CityName</div>
-
-				<br>
-
-				<div class="weatherTemp">Temp: </div>
-				<div class="weatherPress">Press: </div>
-				<div class="weatherHumidity">Humidity:</div>
-				<div class="weatherWind">Wind</div>
-				<div class="weatherMain">Clear</div>
-
-
-			</div>
-			<!-- Weather Container Div End-->
-
-
-			<div class="container maininfo">
-
-				<h3 class="countrynameText">Country:</h3>
-				<h3 class="regionText">Region:</h3>
-				<h3 class="capitalText">Capital:</h3>
-				<h3 class="currencyText">Currency:</h3>
-				<h3 class="languagesText">Languages:</h3>
-				<h3 class="callingCodeText">Number Code:</h3>
-				<!-- Country info Dinamically Push Here -->
-
-			</div>
-
-		</section>
-
-		<section id="contactInfo"> 
-			<div class="container">
-				<form id="contact-form" role="form">
-					<div class="row header">
-						<h3>CONTACT US</h3>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="form_firstname">First Name *</label>
+								<input id="form_firstname" type="text" name="name" class="form-control" placeholder="First Name" required="required" data-error="Firstname is required.">
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="form_lastname">Last Name *</label>
+								<input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Last Name" required="required" data-error="Lastname is required.">
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
 					</div>
-
-					<div class="messages"></div>
-
-					<div class="controls">
-
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="form_firstname">First Name *</label>
-									<input id="form_firstname" type="text" name="name" class="form-control" placeholder="First Name" required="required" data-error="Firstname is required.">
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="form_lastname">Last Name *</label>
-									<input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Last Name" required="required" data-error="Lastname is required.">
-									<div class="help-block with-errors"></div>
-								</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="form_email">Email *</label>
+								<input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Valid email is required.">
+								<div class="help-block with-errors"></div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="form_email">Email *</label>
-									<input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Valid email is required.">
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="form_phone">Phone</label>
-									<input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone Number">
-									<div class="help-block with-errors"></div>
-								</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="form_phone">Phone</label>
+								<input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone Number">
+								<div class="help-block with-errors"></div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="form-group">
-									<label for="form_message">Message *</label>
-									<textarea id="form_message" name="message" class="form-control" placeholder="Message Us" rows="4" required="required" data-error="Please,leave us a message."></textarea>
-									<div class="help-block with-errors"></div>
-								</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="form_message">Message *</label>
+								<textarea id="form_message" name="message" class="form-control" placeholder="Message Us" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+								<div class="help-block with-errors"></div>
 							</div>
-							<div class="col-md-12">
+						</div>
+						<div class="col-md-12">
 							<!-- <input type="submit" id="submit-button" class="btn btn-lg btn-primary"disabled" value="Send message">
 							-->
 							<button type="button" id="submit-button" class="btn btn-info" data-toggle="button" aria-pressed="false" autocomplete="off">
