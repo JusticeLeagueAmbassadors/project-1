@@ -259,10 +259,12 @@ $(document).on("click", "#userInput", function(){
 
 
         $(".weatherCityText").html(data.name)
+        console.log("wooorks")
         $(".weatherTempText").html("Temperature" + "<br/>" + Tfar + "°F")
+        console.log(Tfar)
         $(".weatherPressureText").html("Pressure" + "<br/>" + data.main.pressure)
         $(".weatherHumidityText").html("Humidity" + "<br/>" + data.main.humidity + "%")
-        $(".weatherWindText").html("Wind" + "<br/>" + data.wind.speed + "km/s")
+        $(".weatherWindText").html("Wind" + "<br/>" + data.wind.speed + "km/s") 
         $(".weatherImg").attr("src", "assets/images/WeatherImg/" + pictureurl + ".png")
         $(".weatherHeader").text(data.name)
         $(".weatherTemp").text("Temperature: " + data.main.temp)
