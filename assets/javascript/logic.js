@@ -18,6 +18,8 @@ $(document).ready(function() {
     $("section#countryinfo").hide();
     $("section#contactInfo").hide();
     $(".about-us-container").hide();
+    $("section#newsInfo").hide();
+    $(".news-header").hide();
 
 });
 
@@ -78,7 +80,9 @@ $(document).on("click", "#userInput", function(){
         $("section#countryinfo").show();
         $("section#contactInfo").show();
         $(".about-us-container").show();
-        document.getElementById("countryinfo").scrollIntoView();
+        $("section#newsInfo").show();
+        $(".news-header").show();
+        document.getElementById("newsContainer").scrollIntoView();
 
     });
 
@@ -172,7 +176,6 @@ $(document).on("click", "#userInput", function(){
         newsbox.append(newsboxcontent)
 
         $(".news-container").append(newsbox)
-
     }
 
 
