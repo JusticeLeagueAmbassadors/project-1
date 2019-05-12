@@ -254,13 +254,30 @@ $(document).on("click", "#userInput", function(){
     //push weather info to html
     function htmlpusherweather(data){
 
-        $("#weatherHeader").text(data.name)
-        $("#weatherTemp").text("Temperature: " + data.main.temp)
-        $("#weatherPress").text("Pressure: " + data.main.pressure)
-        $("#weatherHumidity").text("Humidity: " + data.main.humidity)
-        $("#weatherWind").text("Wind: " + data.wind.speed)
-        $("#weatherMain").text("Main: " + data.weather.main)
-        console.log(htmlpusherweather);
+
+
+        var Tfar = Math.floor(data.main.temp * (9/5) - 459.67)
+
+        var pictureurl = data.weather[0].main;
+        console.log("weather condition", pictureurl)
+
+
+        $(".weatherCityText").html(data.name)
+        console.log("wooorks")
+        $(".weatherTempText").html("Temperature" + "<br/>" + Tfar + "°F")
+        console.log(Tfar)
+        $(".weatherPressureText").html("Pressure" + "<br/>" + data.main.pressure)
+        $(".weatherHumidityText").html("Humidity" + "<br/>" + data.main.humidity + "%")
+        $(".weatherWindText").html("Wind" + "<br/>" + data.wind.speed + "km/s") 
+        $(".weatherImg").attr("src", "assets/images/WeatherImg/" + pictureurl + ".png")
+        $(".weatherHeader").text(data.name)
+        $(".weatherTemp").text("Temperature: " + data.main.temp)
+        $(".weatherPress").text("Pressure: " + data.main.pressure)
+        $(".weatherHumidity").text("Humidity: " + data.main.humidity)
+        $(".weatherWind").text("Wind: " + data.wind.speed)
+        $(".weatherMain").text("Main: " + data.weather.main)
+
+
 
     }
 
